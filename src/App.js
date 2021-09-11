@@ -4,6 +4,8 @@ import "../src/glitch.css";
 import ReactPlayer from "react-player";
 import Video from "./videos/0.mp4";
 
+import Header from "../src/components/header"
+
 function App() {
   const calculateTimeLeft = () => {
     const difference = +new Date(`2021-12-22`) - +new Date();
@@ -46,43 +48,34 @@ function App() {
   });
   return (
     <div className="App">
-      <div className="headerTextBox">
-        <p>THE</p>
-        <h1 data-text="MATRIX" className="header Title">
-          MATRIX
-        </h1>
-        {/* <h1 data-text="RESURRECTIONS" className="header Title">
-          RESURRECTIONS
-        </h1> */}
-        <div id="hero">
-          <h1>RESURRECTIONS</h1>
-          <h1>RESURRECTIONS</h1>
-          <h1>RESURRECTIONS</h1>
-          <h1>RESURRECTIONS</h1>
-          <h1>RESURRECTIONS</h1>
-        </div>
-      </div>
+      <Header  className="headerTextBox" />
+
       <div className="timerBox">
-        <h2>Release Date</h2>
-        <h3>12-22-21</h3>
-
-        <p>Time Left</p>
-
+        
         {timerComponents.length ? (
           timerComponents
         ) : (
           <span>It Ends Tonight</span>
         )}
+
       </div>
       <div className="trailerBox">
-        <h2>Trailers</h2>
+        <ReactPlayer
+          className="video"
+          width='100%'
+          controls
+          autoplay="false"
+          url="https://www.youtube.com/watch?v=9ix7TUGVYIo"
+        />
+      </div>
+      {/* <div className="trailerBox">
         <ReactPlayer
           className="video"
           controls
+          autoplay="false"
           url="https://www.youtube.com/watch?v=9ix7TUGVYIo"
         />
-        <p>...</p>
-      </div>
+      </div> */}
 
       <video id="bgVideo" preload="true" autoplay="true" loop muted>
         <source src={Video} type="video/mp4"></source>

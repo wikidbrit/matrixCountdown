@@ -19,14 +19,17 @@
     padding: 0;
   }
 
-  
+  @media screen and (min-width: 960px) {
   #hero {
     position: relative;
     width: 100%;
-    height: 100%;
     color: var(--bright-green);
     font-family: var(--ChetLight);
     line-height: 1.5;
+  }
+
+  .display {
+      opacity: 1;
   }
   
   #hero > h1 {
@@ -213,8 +216,10 @@
       transform: translate(-50%, -50%);
     }
   }
+}
   
-  
-  
+  .display {
+      opacity: 0;
+  }
   
   
